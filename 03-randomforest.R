@@ -1,5 +1,6 @@
 # Libary command brings installed packages into the current namespace
 library(caret)
+library(AppliedPredictiveModeling)
 
 # Source reads and executs a file in the current environment
 source("01-preparedata.R")

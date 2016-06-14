@@ -80,6 +80,9 @@ cleanData = data
 cleanData$Species = paste(data$Species, speciesLabels[data$Species], sep="-")
 cleanData$Species = factor(cleanData$Species)
 
+# Drop specimen number
+cleanData = cleanData[, -2]
+
 # Partition data into training and test sets
 trainingIndices = createDataPartition(
   cleanData$Species,
@@ -89,4 +92,4 @@ trainingSet = cleanData[trainingIndices,]
 testSet = cleanData[-trainingIndices,]
 
 # Create data set with no labels (i.e. no information about species)
-features = cleanData[, -1 * ncol(cleanData)]
+features = cleanData[, -1]
