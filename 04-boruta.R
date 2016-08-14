@@ -1,13 +1,12 @@
-source("leaf-DataPreparation.R")
+source("01-preparedata.R")
 source("leaf.performance.R")
-source("leafConfusionMatrix.csv")
 
 fitBoruta = train(model,
 									trainingSet,
 									method = "Boruta")
 
 
-leafPerformance(predict(fitBoruta, testSet))
+leaf.performance(predict(fitBoruta, testSet))
 
 
 # Accuracy                  Kappa       Mean_Sensitivity       Mean_Specificity    Mean_Pos_Pred_Value
@@ -28,7 +27,7 @@ write.csv(leafConfusionMatrix(predictions), file = "leafConfusionMatrixBoruta.cs
 #-Tweak our machine learning algorithm and parameters?
 #--Quickly becomming less and less important thanks to ensemble learning and deep learning
 fit = train(model, trainingSet, method = "LogitBoost")
-leafPerformance(predict(fit, testSet))
+leaf.performance(predict(fit, testSet))
   # Accuracy                  Kappa
   # 0.8611111              0.8542510
 

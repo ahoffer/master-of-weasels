@@ -16,6 +16,6 @@ selectedSpecies.features = cleanData[species.names %in% selectedSpecies.names ,]
 rotatedData = prcomp(features,	retx = TRUE,	center = TRUE,	scale = TRUE)$x
 selectedSpecies.features.rotated = rotatedData[, 1:numberOfPrincipleComponentsToPlot]
 selectedSpecies.plotLabels = species.names[species.names %in% selectedSpecies.names]
-weasel.plot3d(selectedSpecies.features.rotated, selectedSpecies.plotLabels)
 weasel.trellis(selectedSpecies.features.rotated, as.factor(selectedSpecies.plotLabels))
+weasel.plot3d(selectedSpecies.features.rotated, selectedSpecies.plotLabels)
 

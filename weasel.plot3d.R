@@ -24,7 +24,7 @@ weasel.plot3d = function(points, labels) {
 
 	legend3d(
 		'topleft',
-		cex = 1.5,
+		cex = 0.5,
 		legend = 	selectedSpecies.names,
 		fill = colorMap,
 		merge = F,

@@ -1,4 +1,0 @@
-# Define helper function to print confusion matrix
-leaf.confusionmatrix = function(predictions) {
-	confusionMatrix(predictions, testSet$SpeciesName)$table
-}
