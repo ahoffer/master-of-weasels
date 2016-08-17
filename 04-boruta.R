@@ -4,17 +4,10 @@ source("leaf.performance.R")
 fitBoruta = train(model,
 									trainingSet,
 									method = "Boruta")
-
-
-leaf.performance(predict(fitBoruta, testSet))
-
-
-# Accuracy                  Kappa       Mean_Sensitivity       Mean_Specificity    Mean_Pos_Pred_Value
-# 0.84482759             0.83928571             0.85000000             0.99464286             0.87777778
-# Mean_Neg_Pred_Value    Mean_Detection_Rate Mean_Balanced_Accuracy
-# 0.99469507             0.02816092             0.92232143
-
-write.csv(leafConfusionMatrix(predictions), file = "leafConfusionMatrixBoruta.csv")
+predictions = predict(fitBoruta, testSet)
+leaf.performance(predictions)
+cm = confusionMatrix(predictions, testSet$Species)$table
+write.csv(cm, file = "leafConfusion1MatrixBoruta.csv")
 
 #################################
 ##### How can we do better? #####

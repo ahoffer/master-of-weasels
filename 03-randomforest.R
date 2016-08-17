@@ -4,7 +4,6 @@ library(AppliedPredictiveModeling)
 
 # Source reads and executs a file in the current environment
 source("01-preparedata.R")
-source("leaf.confusionmatrix.R")
 
 # Create model (R formula)
 model = Species ~ . # SpeciesName is the dependent variable, all other are independent variables (i.e. predictors)

@@ -4,10 +4,11 @@ library(caret)
 # https://archive.ics.uci.edu/ml/datasets/Leaf
 
 # Load data
-#-Read data with no additional parameters. Doesn't looks great.
+## Open "leaf.csv" and look at in Excel or another spreadsheet.
+## It doesn't look great.
 read.csv("leaf.csv")
 
-
+# "Munge," "condition" or otherwise transform the data to make it friendly to analysis
 #-Read data and provider header names
 data = read.csv(
   "leaf.csv",
